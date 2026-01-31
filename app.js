@@ -1,26 +1,43 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-       // const heading = React.createElement("h1", {id: "heading"}, "Hello World from React!");
+// React.createElement => Object => After rendering => HTMLElement(render)
 
-        // console.log(heading);
+// const Title = () =>  (
+//     <h1 className="head" tabIndex="5">
+//         Title
+//     </h1>
+// );
 
-        // const root = ReactDOM.createRoot(document.getElementById("root"));
+// // Componenet Composistion
+// const HeadingComponent = () => (
+//     <div id="container">
+//         <Title />
+//         <h1 className="heading">Namaste React using JSX</h1>
+//     </div>
+// );
 
-        // root.render(heading);
+const number = 1000;
+
+const elem = <span> React Element</span>
 
 
-        const parent = React.createElement("div", {id: "parent"}, 
-            React.createElement("div", {id : "child"}, 
-                [
-                    React.createElement("h1", {key: "h1-tag"}, "I'm in h1 tag"),
-                    React.createElement("h1", {key: "h2-tag"}, "I'm in h2 tag"),
-                ]
-            ), 
-        );
+const Title =  (
+    <h1 className="head" tabIndex="5">
+        Title {elem}
+    </h1>
+);
 
-        console.log(parent);
 
-        const root = ReactDOM.createRoot(document.getElementById("root"));
+const HeadingComponent = () => (
+    <div id="container">
+        {Title}
+        <h1 className="heading">Namaste React using JSX</h1>
+    </div>
+);
 
-        root.render(parent);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// root.render(jsxHeading);
+root.render(<HeadingComponent />)
+
